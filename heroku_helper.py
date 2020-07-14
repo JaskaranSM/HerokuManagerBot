@@ -19,5 +19,8 @@ class HerokuHelper:
     def getLog(self):
         return self.app.get_log()
 
+    def addEnvVar(self,key,value):
+        self.app.config()[key] = value
+
     def restart(self):
         return self.app.restart()
